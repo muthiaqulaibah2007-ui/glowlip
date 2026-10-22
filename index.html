@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Glowlip: liptint 5 shade, Rp30.000 per liptint. Order mudah lewat WhatsApp.">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{color-scheme:light}</style>
+<title>Glowlip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+  /* Layout: sticky nav, hero with a fan of 5 kawaii tubes, wavy-divided bands (Cara Order, Shade, Review), footer with WA + IG. */
+  :root {
+    --bg: #FFF4F8;
+    --bg2: #FFE6EF;
+    --bg3: #FFD2E3;
+    --surface: #FFFFFF;
+    --ink: #4A2336;
+    --ink-soft: #7A5367;
+    --line: #F7C6DA;
+    --accent: #D93F7E;
+    --on-accent: #FFFFFF;
+    --pink: #FF8FB5;
+    --butter: #FFE7A3;
+    --mint: #CDEFE3;
+    --star: #FFB444;
+    --shadow: 0 10px 28px rgba(217, 63, 126, 0.14);
+    --f-display: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+    --f-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #2A1420;
+      --bg2: #351929;
+      --bg3: #46233A;
+      --surface: #43202F;
+      --ink: #FFEAF2;
+      --ink-soft: #E2B8CA;
+      --line: #6A3550;
+      --accent: #FF8FB5;
+      --on-accent: #3A1020;
+      --pink: #FF8FB5;
+      --butter: #FFE7A3;
+      --mint: #CDEFE3;
+      --star: #FFC15E;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #2A1420;
+    --bg2: #351929;
+    --bg3: #46233A;
+    --surface: #43202F;
+    --ink: #FFEAF2;
+    --ink-soft: #E2B8CA;
+    --line: #6A3550;
+    --accent: #FF8FB5;
+    --on-accent: #3A1020;
+    --pink: #FF8FB5;
+    --butter: #FFE7A3;
+    --mint: #CDEFE3;
+    --star: #FFC15E;
+    --shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    height: env(safe-area-inset-top, 0px);
+    z-index: 30;
+    background: var(--bg);
+  }
+  h1, h2, h3 { font-family: var(--f-display); line-height: 1.15; margin: 0; text-wrap: balance; color: var(--ink); }
+  p { margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 10px; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--surface);
+    border: 2px dashed var(--line);
+    border-radius: 999px;
+    padding: 4px 14px;
+  }
+
+  /* nav */
+  .nav {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    background: var(--bg);
+    border-bottom: 2px solid var(--line);
+  }
+  .nav-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 16px; padding-block: 10px; }
+  .logo { display: inline-flex; align-items: center; gap: 6px; font-family: var(--f-display); font-weight: 700; font-size: 26px; text-decoration: none; letter-spacing: -0.01em; }
+  .logo svg { width: 22px; height: 22px; fill: var(--pink); }
+  .logo b { color: var(--accent); font-weight: 700; }
+  .links { display: flex; flex-wrap: wrap; gap: 4px; }
+  .links a { text-decoration: none; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px; color: var(--ink-soft); }
+  .links a:hover { background: var(--bg2); color: var(--ink); }
+
+  /* buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: var(--f-display); font-weight: 600; font-size: 17px;
+    padding: 12px 22px; border-radius: 999px; text-decoration: none; cursor: pointer;
+    border: 2px solid var(--accent); background: var(--accent); color: var(--on-accent);
+    box-shadow: 0 5px 0 rgba(74, 35, 54, 0.18);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 rgba(74, 35, 54, 0.18); }
+  .btn:active { transform: translateY(3px); box-shadow: 0 2px 0 rgba(74, 35, 54, 0.18); }
+  .btn.ghost { background: var(--surface); color: var(--accent); }
+  .btn svg { width: 20px; height: 20px; flex: none; }
+  .btn.small { font-size: 15px; padding: 9px 16px; }
+
+  /* hero */
+  .hero { position: relative; overflow: hidden; padding-block: 44px 72px; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 24px 40px; align-items: center; }
+  .hero h1 { font-size: clamp(38px, 7vw, 66px); font-weight: 700; margin-top: 16px; letter-spacing: -0.015em; }
+  .hero h1 em { font-style: normal; color: var(--accent); position: relative; white-space: nowrap; }
+  .hero h1 em::after {
+    content: ""; position: absolute; left: -2%; right: -2%; bottom: 2px; height: 0.3em; z-index: -1;
+    background: var(--butter); border-radius: 999px; opacity: 0.9;
+  }
+  .hero-sub { font-size: 18px; color: var(--ink-soft); max-width: 46ch; margin-top: 18px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .hero-art { position: relative; min-width: 0; }
+  .hero-art svg.fan { width: 100%; height: auto; display: block; overflow: visible; }
+  .blob { fill: var(--bg2); }
+  .sticker {
+    position: absolute; right: 2%; top: -2%;
+    width: 112px; height: 112px; border-radius: 50%;
+    background: var(--butter); color: #4A2336;
+    display: grid; place-content: center; text-align: center;
+    font-family: var(--f-display); line-height: 1.05;
+    transform: rotate(10deg); border: 3px dashed #4A2336;
+    box-shadow: var(--shadow);
+  }
+  .sticker strong { font-size: 22px; font-weight: 700; display: block; }
+  .sticker span { font-size: 13px; font-weight: 500; }
+  .tube { animation: bob 3.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
+  .t2 { animation-delay: -0.7s; } .t3 { animation-delay: -1.4s; } .t4 { animation-delay: -2.1s; } .t5 { animation-delay: -2.8s; }
+  @keyframes bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+  .twinkle { animation: tw 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes tw { 0%, 100% { scale: 1; opacity: 1; } 50% { scale: 0.7; opacity: 0.7; } }
+  .deco { position: absolute; pointer-events: none; fill: var(--pink); opacity: 0.9; }
+  .deco.s1 { width: 30px; left: 3%; top: 8%; fill: var(--star); }
+  .deco.s2 { width: 20px; left: 46%; bottom: 14%; }
+  .deco.h1 { width: 28px; left: 50%; top: 6%; transform: rotate(-12deg); }
+
+  /* waves + bands */
+  .band { position: relative; padding-block: 76px 72px; }
+  .band.b2 { background: var(--bg2); }
+  .band.b1 { background: var(--bg); }
+  .wave { position: absolute; left: 0; right: 0; top: -35px; width: 100%; height: 36px; display: block; }
+  .wave.w-2 { fill: var(--bg2); } .wave.w-1 { fill: var(--bg); } .wave.w-3 { fill: var(--bg3); }
+  .sec-head { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 36px; max-width: 60ch; }
+  .sec-head h2 { font-size: clamp(30px, 5vw, 44px); font-weight: 700; }
+  .sec-head p { color: var(--ink-soft); font-size: 17px; }
+  section[id] { scroll-margin-top: 70px; }
+
+  /* order steps */
+  .order-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: start; }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .steps li { display: grid; grid-template-columns: 52px 1fr; gap: 16px; align-items: start; background: var(--surface); border: 2px solid var(--line); border-radius: 24px; padding: 16px 18px; min-width: 0; }
+  .num { width: 52px; height: 52px; border-radius: 50%; background: var(--pink); color: #4A2336; font-family: var(--f-display); font-weight: 700; font-size: 24px; display: grid; place-content: center; border: 2px solid #4A2336; }
+  .steps li:nth-child(even) .num { background: var(--butter); }
+  .steps h3 { font-size: 20px; font-weight: 600; margin-bottom: 2px; }
+  .steps p { color: var(--ink-soft); font-size: 15.5px; }
+  .note {
+    background: var(--butter); color: #4A2336; border-radius: 22px; padding: 22px 22px 20px;
+    border: 2px dashed #4A2336; transform: rotate(1.2deg); box-shadow: var(--shadow); min-width: 0;
+  }
+  .note h3 { color: #4A2336; font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+  .note p { font-size: 15px; }
+  .note pre {
+    margin: 14px 0; padding: 14px; background: rgba(255, 255, 255, 0.7); border-radius: 14px;
+    font-family: var(--f-body); font-size: 15px; font-weight: 700; white-space: pre-wrap; overflow-wrap: anywhere; color: #4A2336;
+  }
+  .note .btn { background: #4A2336; border-color: #4A2336; color: #FFF4F8; }
+  .copied { display: inline-block; margin-left: 10px; font-weight: 800; font-size: 14px; }
+
+  /* shades */
+  .shade-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px; }
+  .card {
+    position: relative; display: flex; flex-direction: column; gap: 10px; min-width: 0;
+    background: var(--surface); border: 2px solid var(--line); border-radius: 28px; padding: 14px 14px 18px;
+    box-shadow: var(--shadow); transition: transform 0.2s ease;
+  }
+  .card:nth-child(odd) { rotate: -1deg; } .card:nth-child(even) { rotate: 1deg; }
+  .card:hover { transform: translateY(-6px); }
+  .swatch { border-radius: 20px; height: 120px; display: grid; place-content: center; background: color-mix(in srgb, var(--c) 24%, var(--surface)); }
+  .swatch svg { width: 112px; height: auto; display: block; }
+  .card h3 { font-size: 22px; font-weight: 600; padding-inline: 4px; }
+  .card .desc { color: var(--ink-soft); font-size: 14.5px; padding-inline: 4px; flex: 1; }
+  .price-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-inline: 4px; flex-wrap: wrap; }
+  .price { font-family: var(--f-display); font-size: 20px; font-weight: 700; color: var(--accent); }
+  .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--c); border: 2px solid var(--ink); display: inline-block; vertical-align: -1px; margin-right: 6px; }
+
+  /* reviews */
+  .tag-demo { display: inline-block; font-size: 13px; font-weight: 700; color: var(--ink-soft); background: var(--surface); border: 2px dashed var(--line); border-radius: 12px; padding: 4px 12px; }
+  .rev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .rev { background: var(--surface); border: 2px solid var(--line); border-radius: 28px; padding: 22px; display: flex; flex-direction: column; gap: 14px; min-width: 0; position: relative; }
+  .rev:nth-child(2) { margin-top: 14px; }
+  .stars { display: flex; gap: 3px; }
+  .stars svg { width: 20px; height: 20px; fill: var(--star); }
+  .rev p { font-size: 16px; }
+  .who { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+  .avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--pink); border: 2px solid #4A2336; display: grid; place-content: center; flex: none; }
+  .avatar svg { width: 22px; height: 22px; }
+  .who b { display: block; font-family: var(--f-display); font-weight: 600; line-height: 1.2; }
+  .who span { font-size: 13.5px; color: var(--ink-soft); }
+  .rev-cta { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+  .rev-cta p { color: var(--ink-soft); }
+
+  /* about */
+  .feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .feat { background: var(--surface); border: 2px solid var(--line); border-radius: 26px; padding: 22px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .feat:nth-child(2) { border-style: dashed; }
+  .feat-ic { width: 52px; height: 52px; border-radius: 50%; background: var(--pink); border: 2px solid #4A2336; display: grid; place-content: center; margin-bottom: 4px; }
+  .feat:nth-child(2) .feat-ic { background: var(--butter); }
+  .feat:nth-child(3) .feat-ic { background: var(--mint); }
+  .feat-ic svg { width: 24px; height: 24px; fill: #4A2336; }
+  .feat h3 { font-size: 21px; font-weight: 600; }
+  .feat p { color: var(--ink-soft); font-size: 15.5px; }
+
+  /* footer */
+  .foot { position: relative; background: var(--bg3); padding-block: 72px 36px; }
+  .foot-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: center; }
+  .foot h2 { font-size: clamp(28px, 4.5vw, 40px); font-weight: 700; }
+  .foot p { color: var(--ink-soft); margin-top: 10px; max-width: 44ch; }
+  .foot .cta-row { margin-top: 0; justify-content: flex-start; }
+  .copy { margin-top: 40px; padding-top: 18px; border-top: 2px dashed var(--line); font-size: 14px; color: var(--ink-soft); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+
+  .fab {
+    position: fixed; z-index: 25;
+    right: calc(16px + env(safe-area-inset-right, 0px));
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    width: 58px; height: 58px; border-radius: 50%;
+    background: #25D366; color: #fff; display: grid; place-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); border: 3px solid #fff;
+    transition: transform 0.15s ease;
+  }
+  .fab:hover { transform: scale(1.08); }
+  .fab svg { width: 30px; height: 30px; }
+
+  @media (max-width: 820px) {
+    .hero-grid, .order-grid, .foot-grid { grid-template-columns: 1fr; }
+    .hero { padding-block: 28px 64px; }
+    .hero-art { max-width: 460px; margin-inline: auto; width: 100%; }
+    .sticker { width: 96px; height: 96px; }
+    .sticker strong { font-size: 19px; }
+    .rev:nth-child(2) { margin-top: 0; }
+  }
+  @media (max-width: 440px) {
+    .logo { font-size: 23px; }
+    .links a { padding: 6px 10px; font-size: 14px; }
+    .btn { font-size: 16px; padding: 11px 18px; }
+    .steps li { grid-template-columns: 44px 1fr; gap: 12px; padding: 14px; }
+    .num { width: 44px; height: 44px; font-size: 20px; }
+    .band { padding-block: 68px 60px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .tube, .twinkle { animation: none; }
+    .btn, .card, .fab { transition: none; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="tube" viewBox="0 0 60 170">
+      <rect x="14" y="2" width="32" height="40" rx="9" fill="#FFF7E6"/>
+      <rect x="14" y="2" width="32" height="40" rx="9" fill="none" stroke="#4A2336" stroke-width="2.5"/>
+      <rect x="10" y="40" width="40" height="9" rx="4" fill="#FFD0E0" stroke="#4A2336" stroke-width="2.5"/>
+      <rect x="6" y="47" width="48" height="119" rx="18" fill="currentColor" stroke="#4A2336" stroke-width="2.5"/>
+      <rect x="13" y="58" width="5" height="42" rx="2.5" fill="#fff" opacity="0.4"/>
+      <circle cx="22" cy="104" r="3.4" fill="#4A2336"/>
+      <circle cx="38" cy="104" r="3.4" fill="#4A2336"/>
+      <path d="M25 113 Q30 119 35 113" fill="none" stroke="#4A2336" stroke-width="2.6" stroke-linecap="round"/>
+      <ellipse cx="15" cy="113" rx="4.5" ry="3" fill="#fff" opacity="0.55"/>
+      <ellipse cx="45" cy="113" rx="4.5" ry="3" fill="#fff" opacity="0.55"/>
+    </symbol>
+    <symbol id="sparkle" viewBox="0 0 24 24"><path d="M12 0Q13 11 24 12Q13 13 12 24Q11 13 0 12Q11 11 12 0Z"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 22"><path d="M12 21C-5 9 4 -1 12 6C20 -1 29 9 12 21Z"/></symbol>
+    <symbol id="star" viewBox="0 0 24 24"><path d="M12 2l3 6.6 7.2.8-5.4 4.8 1.6 7.1L12 17.6 5.6 21.3l1.6-7.1L1.8 9.4 9 8.6z"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#home" aria-label="Glowlip, ke atas"><svg aria-hidden="true"><use href="#heart"/></svg>glow<b>lip</b></a>
+    <nav class="links" aria-label="Menu utama">
+      <a href="#home">Home</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#shade">Shade</a>
+      <a href="#review">Review</a>
+      <a href="#cara-order">Cara Order</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <svg class="deco s1 twinkle" aria-hidden="true"><use href="#sparkle"/></svg>
+    <svg class="deco h1" aria-hidden="true"><use href="#heart"/></svg>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">5 shade · Rp30.000</span>
+        <h1>Bibir <em>glowing</em>, dompet tetap aman.</h1>
+        <p class="hero-sub">Liptint Glowlip hadir dalam 5 shade manis untuk semua mood. Harganya cuma Rp30.000 per liptint, dan pesannya gampang lewat WhatsApp.</p>
+        <div class="cta-row">
+          <a class="btn" data-wa data-msg="Halo Glowlip, aku mau order liptint." href="https://wa.me/628000000000" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.3c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+            Pesan via WhatsApp
+          </a>
+          <a class="btn ghost" href="#shade">Lihat 5 shade</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="sticker"><div><strong>Rp30.000</strong><span>per liptint</span></div></div>
+        <svg class="fan" viewBox="0 0 420 300" role="img" aria-label="Lima tube liptint Glowlip dengan wajah lucu dalam lima warna">
+          <ellipse class="blob" cx="210" cy="170" rx="200" ry="125"/>
+          <g transform="translate(14 92) rotate(-20 30 85)"><g class="tube t1"><use href="#tube" width="60" height="170" style="color:#FFA58F"/></g></g>
+          <g transform="translate(92 56) rotate(-10 30 85)"><g class="tube t2"><use href="#tube" width="60" height="170" style="color:#FF86AE"/></g></g>
+          <g transform="translate(180 40)"><g class="tube t3"><use href="#tube" width="60" height="170" style="color:#E8648C"/></g></g>
+          <g transform="translate(268 56) rotate(10 30 85)"><g class="tube t4"><use href="#tube" width="60" height="170" style="color:#D9A099"/></g></g>
+          <g transform="translate(346 92) rotate(20 30 85)"><g class="tube t5"><use href="#tube" width="60" height="170" style="color:#C23A5B"/></g></g>
+          <use class="twinkle" href="#sparkle" x="30" y="30" width="26" height="26" fill="#FFB444"/>
+          <use class="twinkle" href="#sparkle" x="362" y="236" width="22" height="22" fill="#FF8FB5" style="animation-delay:-1s"/>
+          <use href="#heart" x="388" y="40" width="22" height="20" fill="#FF8FB5"/>
+          <use href="#heart" x="10" y="226" width="18" height="16" fill="#FFB444"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="band b2" id="tentang">
+    <svg class="wave w-2" viewBox="0 0 1200 36" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36V18Q60 0 120 18T240 18T360 18T480 18T600 18T720 18T840 18T960 18T1080 18T1200 18V36Z"/></svg>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Tentang liptint kami</span>
+        <h2>Liptint kecil untuk bibir yang selalu glowing</h2>
+        <p>Glowlip adalah brand liptint dengan 5 shade pilihan. Kami ingin kamu tampil glowing setiap hari tanpa pusing soal harga. Satu liptint cuma Rp30.000, jadi gampang mengoleksi lebih dari satu warna.</p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat">
+          <span class="feat-ic"><svg aria-hidden="true"><use href="#sparkle"/></svg></span>
+          <h3>5 shade manis</h3>
+          <p>Dari peach segar sampai merah ceri, ada warna untuk setiap mood.</p>
+        </div>
+        <div class="feat">
+          <span class="feat-ic"><svg aria-hidden="true"><use href="#heart"/></svg></span>
+          <h3>Rp30.000 per liptint</h3>
+          <p>Satu harga untuk semua shade, jadi tinggal pilih yang paling kamu suka.</p>
+        </div>
+        <div class="feat">
+          <span class="feat-ic"><svg aria-hidden="true"><use href="#star"/></svg></span>
+          <h3>Order lewat WhatsApp</h3>
+          <p>Tanya shade atau stok langsung ke admin Glowlip sebelum kamu beli.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band b1" id="shade">
+    <svg class="wave w-1" viewBox="0 0 1200 36" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36V18Q60 0 120 18T240 18T360 18T480 18T600 18T720 18T840 18T960 18T1080 18T1200 18V36Z"/></svg>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">5 shade liptint</span>
+        <h2>5 shade, 1 harga manis</h2>
+        <p>Semua liptint Glowlip Rp30.000. Pilih warna yang paling cocok sama mood kamu hari ini.</p>
+      </div>
+      <div class="shade-grid" id="shade-grid"></div>
+    </div>
+  </section>
+
+  <section class="band b2" id="review">
+    <svg class="wave w-2" viewBox="0 0 1200 36" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36V18Q60 0 120 18T240 18T360 18T480 18T600 18T720 18T840 18T960 18T1080 18T1200 18V36Z"/></svg>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Review</span>
+        <h2>Kata mereka yang sudah coba</h2>
+        <span class="tag-demo">Contoh tampilan. Ganti dengan review pelanggan asli Glowlip.</span>
+      </div>
+      <div class="rev-grid">
+        <article class="rev">
+          <div class="stars" aria-label="5 dari 5 bintang"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+          <p>Tulis review pelanggan di sini. Misalnya tentang warna yang nempel di bibir dan rasa nyaman saat dipakai seharian.</p>
+          <div class="who"><span class="avatar"><svg viewBox="0 0 24 24" fill="#4A2336"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg></span><div><b>Nama pelanggan</b><span>Shade yang dibeli</span></div></div>
+        </article>
+        <article class="rev">
+          <div class="stars" aria-label="5 dari 5 bintang"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+          <p>Tempel screenshot atau kutipan chat pelanggan yang sudah setuju ditampilkan. Review asli bikin calon pembeli lebih percaya.</p>
+          <div class="who"><span class="avatar"><svg viewBox="0 0 24 24" fill="#4A2336"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg></span><div><b>Nama pelanggan</b><span>Shade yang dibeli</span></div></div>
+        </article>
+        <article class="rev">
+          <div class="stars" aria-label="5 dari 5 bintang"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+          <p>Kartu ini bisa kamu duplikasi untuk menambah review lain. Tulis singkat saja, dua atau tiga kalimat sudah cukup.</p>
+          <div class="who"><span class="avatar"><svg viewBox="0 0 24 24" fill="#4A2336"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg></span><div><b>Nama pelanggan</b><span>Shade yang dibeli</span></div></div>
+        </article>
+      </div>
+      <div class="rev-cta">
+        <a class="btn" data-wa data-msg="Halo Glowlip, aku mau order liptint." href="https://wa.me/628000000000" target="_blank" rel="noopener">Coba sekarang</a>
+        <p>Sudah beli? Tag Glowlip di Instagram dan ceritakan pengalamanmu.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band b1" id="cara-order">
+    <svg class="wave w-1" viewBox="0 0 1200 36" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36V18Q60 0 120 18T240 18T360 18T480 18T600 18T720 18T840 18T960 18T1080 18T1200 18V36Z"/></svg>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Cara order</span>
+        <h2>Empat langkah, liptint sampai ke kamu</h2>
+        <p>Semua order lewat WhatsApp Glowlip, jadi kamu bisa tanya-tanya dulu sebelum beli.</p>
+      </div>
+      <div class="order-grid">
+        <ol class="steps">
+          <li><span class="num">1</span><div><h3>Pilih shade</h3><p>Lihat 5 shade di atas, lalu tentukan favoritmu.</p></div></li>
+          <li><span class="num">2</span><div><h3>Chat WhatsApp</h3><p>Klik tombol Pesan di kartu shade, atau kirim format order di samping ke WhatsApp Glowlip.</p></div></li>
+          <li><span class="num">3</span><div><h3>Bayar</h3><p>Admin membalas dengan total (Rp30.000 dikali jumlah liptint) dan cara pembayarannya.</p></div></li>
+          <li><span class="num">4</span><div><h3>Terima paketmu</h3><p>Pesanan dikemas lalu dikirim ke alamat yang kamu tulis.</p></div></li>
+        </ol>
+        <div class="note">
+          <h3>Format order</h3>
+          <p>Salin teks ini, isi, lalu kirim ke WhatsApp Glowlip.</p>
+          <pre id="tpl">Halo Glowlip, aku mau order.
+Nama:
+Shade:
+Jumlah:
+Alamat lengkap:</pre>
+          <button class="btn small" type="button" id="copy-tpl">Salin format</button><span class="copied" id="copied" hidden>Tersalin!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <svg class="wave w-3" viewBox="0 0 1200 36" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36V18Q60 0 120 18T240 18T360 18T480 18T600 18T720 18T840 18T960 18T1080 18T1200 18V36Z"/></svg>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h2>Yuk, glow bareng Glowlip</h2>
+        <p>Tanya shade, cek stok, atau langsung order. Kami balas lewat WhatsApp, dan cerita terbaru ada di Instagram.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn" data-wa data-msg="Halo Glowlip, aku mau tanya dulu." href="https://wa.me/628000000000" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.3c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+          WhatsApp
+        </a>
+        <a class="btn ghost" data-ig href="https://www.instagram.com/glowlip" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor" stroke="none"/></svg>
+          @glowlip
+        </a>
+      </div>
+    </div>
+    <div class="copy"><span>© 2026 Glowlip. Liptint Rp30.000 per buah.</span><span>Dibuat dengan sayang.</span></div>
+  </div>
+</footer>
+
+<a class="fab" data-wa data-msg="Halo Glowlip, aku mau tanya." href="https://wa.me/628000000000" target="_blank" rel="noopener" aria-label="Chat WhatsApp Glowlip">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.3c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+</a>
+
+<script>
+  // Ganti dua nilai ini, lalu semua tombol WhatsApp dan Instagram ikut berubah.
+  var WA_NUMBER = "628000000000";   // format internasional tanpa + atau 0 di depan, contoh 6281234567890
+  var IG_USER = "glowlip";
+  var PRICE = "Rp30.000";
+
+  var SHADES = [
+    { name: "Peach Pop", color: "#FFA58F", desc: "Peach hangat yang segar, cerah tanpa terlalu ramai." },
+    { name: "Strawberry Milk", color: "#FF86AE", desc: "Pink stroberi yang manis dan lembut." },
+    { name: "Bunny Rose", color: "#E8648C", desc: "Rose pink yang berani untuk hari yang penuh semangat." },
+    { name: "Mocha Bear", color: "#D9A099", desc: "Nude cokelat muda yang kalem untuk dipakai sehari-hari." },
+    { name: "Cherry Pie", color: "#C23A5B", desc: "Merah ceri yang dalam untuk tampil beda." }
+  ];
+
+  function waLink(text) {
+    return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text);
+  }
+
+  function lipSvg(color) {
+    return '<svg viewBox="0 0 120 70" aria-hidden="true">' +
+      '<path d="M8 36Q30 8 60 22Q90 8 112 36Q90 64 60 60Q30 64 8 36Z" fill="' + color + '" stroke="#4A2336" stroke-width="3" stroke-linejoin="round"/>' +
+      '<path d="M14 36Q60 44 106 36" fill="none" stroke="#4A2336" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>' +
+      '<ellipse cx="38" cy="30" rx="9" ry="3.6" fill="#fff" opacity="0.55" transform="rotate(-18 38 30)"/>' +
+      '<ellipse cx="82" cy="30" rx="6" ry="2.6" fill="#fff" opacity="0.45" transform="rotate(16 82 30)"/>' +
+      '</svg>';
+  }
+
+  var grid = document.getElementById("shade-grid");
+  grid.innerHTML = SHADES.map(function (s) {
+    var msg = "Halo Glowlip, aku mau order liptint shade " + s.name + " (" + PRICE + "). Jumlah: 1";
+    return '<article class="card" style="--c:' + s.color + '">' +
+      '<div class="swatch">' + lipSvg(s.color) + '</div>' +
+      '<h3><span class="dot"></span>' + s.name + '</h3>' +
+      '<p class="desc">' + s.desc + '</p>' +
+      '<div class="price-row"><span class="price">' + PRICE + '</span>' +
+      '<a class="btn small" data-wa-link href="' + waLink(msg) + '" target="_blank" rel="noopener">Pesan</a></div>' +
+      '</article>';
+  }).join("");
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-wa]"), function (el) {
+    el.href = waLink(el.getAttribute("data-msg") || "Halo Glowlip");
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-ig]"), function (el) {
+    el.href = "https://www.instagram.com/" + IG_USER;
+    if (el.lastChild && el.lastChild.nodeType === 3) el.lastChild.textContent = "\n          @" + IG_USER + "\n        ";
+  });
+
+  var copyBtn = document.getElementById("copy-tpl");
+  var copied = document.getElementById("copied");
+  copyBtn.addEventListener("click", function () {
+    var pre = document.getElementById("tpl");
+    function showDone() {
+      copied.hidden = false;
+      setTimeout(function () { copied.hidden = true; }, 1800);
+    }
+    function fallback() {
+      var r = document.createRange();
+      r.selectNodeContents(pre);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(r);
+    }
+    try {
+      navigator.clipboard.writeText(pre.textContent).then(showDone, fallback);
+    } catch (e) { fallback(); }
+  });
+</script>
+
+</body>
+</html>
